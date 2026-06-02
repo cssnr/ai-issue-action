@@ -1,0 +1,15 @@
+{
+  "act": true,
+  "action": "opened",
+  "issue": {
+    "number": 1,
+    "title": "Test Issue",
+    "body": "For testing only.",
+    "state": "open",
+    "user": {
+      "login": "smashedr"
+    },
+    "labels": [],
+    "assignees": []
+  }
+}
