@@ -1,0 +1,53 @@
+# https://www.schemastore.org/github-action.json
+name: "AI Issue"
+description: "Automatically triage issues with AI trained on your existing documentation. Free to use with any provider you choose."
+author: "Shane"
+
+branding:
+  icon: "message-square"
+  color: "purple"
+
+inputs:
+  model:
+    description: "Model to Use"
+    required: true
+  instructions:
+    description: "Text Instructions"
+  url:
+    description: "Remote URL Instructions"
+  path:
+    description: "Path(s) Glob Instructions"
+  max_tokens:
+    description: "Max Output Tokens"
+  head:
+    description: "Head Text to Prepend to the Reply"
+  tail:
+    description: "Tail Text to Append to the Reply"
+  base_url:
+    description: "Base URL for OpenAI Compatible Provider"
+    default: "https://opencode.ai/zen/v1"
+  number:
+    description: "Optional Issue Number"
+  token:
+    description: "GitHub Token"
+    default: ${{ github.token }}
+
+outputs:
+  text:
+    description: "Response Text"
+  reasoningText:
+    description: "Reasoning Text"
+  usage:
+    description: "Usage JSON"
+  finishReason:
+    description: "Finish Reason"
+  comment:
+    description: "Comment JSON"
+  commentId:
+    description: "Comment ID"
+  commentUrl:
+    description: "Comment URL"
+
+runs:
+  using: "node24"
+  main: "dist/index.js"
