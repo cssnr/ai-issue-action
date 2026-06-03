@@ -5,6 +5,7 @@
 [![Action Run Using](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcssnr%2Fai-issue-action%2Frefs%2Fheads%2Fmaster%2Faction.yml&query=%24.runs.using&logo=githubactions&logoColor=white&label=runs)](https://github.com/cssnr/actionlint-action/blob/master/action.yml)
 [![Workflow Release](https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/release.yaml?logo=norton&logoColor=white&label=release)](https://github.com/cssnr/ai-issue-action/actions/workflows/release.yaml)
 [![Workflow Lint](https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/lint.yaml?logo=norton&logoColor=white&label=lint)](https://github.com/cssnr/ai-issue-action/actions/workflows/lint.yaml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_ai-issue-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_ai-issue-action)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/ai-issue-action?logo=github&label=updated)](https://github.com/cssnr/ai-issue-action)
 [![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/ai-issue-action?logo=buffer&label=repo%20size)](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
 [![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/ai-issue-action?logo=devbox)](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
@@ -179,7 +180,7 @@ jobs:
   issue:
     name: 'Issue'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
 
     permissions:
       contents: write
@@ -329,6 +330,7 @@ Additionally, you can support other [GitHub Actions](https://actions.cssnr.com/)
 - [Stack Deploy Action](https://github.com/cssnr/stack-deploy-action?tab=readme-ov-file#readme)
 - [Portainer Stack Deploy Action](https://github.com/cssnr/portainer-stack-deploy-action?tab=readme-ov-file#readme)
 - [Docker Context Action](https://github.com/cssnr/docker-context-action?tab=readme-ov-file#readme)
+- [AI Issue Action](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
 - [Actions Up Action](https://github.com/cssnr/actions-up-action?tab=readme-ov-file#readme)
 - [Webstore Publish Action](https://github.com/cssnr/webstore-publish-action?tab=readme-ov-file#readme)
 - [Openai Translate Action](https://github.com/smashedr/openai-translate-action?tab=readme-ov-file#readme)
