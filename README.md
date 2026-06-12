@@ -142,7 +142,7 @@ Example: `.github/instructions/*.md`
 
 ## Examples
 
-💡 To get started 100% free, copy the [issue.yaml](issue.yaml) to your workflows.
+💡 To get started 100% free, copy the [issue.yaml](issue.yaml) to your `.github/workflows`.
 
 Basic example using the free Zen Big Pickle model.
 
@@ -333,7 +333,6 @@ Additionally, you can support other [GitHub Actions](https://actions.cssnr.com/)
 - [AI Issue Action](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
 - [Actions Up Action](https://github.com/cssnr/actions-up-action?tab=readme-ov-file#readme)
 - [Webstore Publish Action](https://github.com/cssnr/webstore-publish-action?tab=readme-ov-file#readme)
-- [Openai Translate Action](https://github.com/smashedr/openai-translate-action?tab=readme-ov-file#readme)
 - [Rhysd Actionlint Action](https://github.com/cssnr/actionlint-action?tab=readme-ov-file#readme)
 - [Zensical Action](https://github.com/cssnr/zensical-action?tab=readme-ov-file#readme)
 - [VirusTotal Action](https://github.com/cssnr/virustotal-action?tab=readme-ov-file#readme)
@@ -367,6 +366,7 @@ These actions are not published on the Marketplace, but may be useful.
 - [cssnr/push-artifacts-action](https://github.com/cssnr/push-artifacts-action?tab=readme-ov-file#readme) - Sync files to a remote host with rsync.
 - [smashedr/update-release-notes-action](https://github.com/smashedr/update-release-notes-action?tab=readme-ov-file#readme) - Update release notes.
 - [smashedr/combine-release-notes-action](https://github.com/smashedr/combine-release-notes-action?tab=readme-ov-file#readme) - Combine release notes.
+- [smashedr/openai-translate-action](https://github.com/smashedr/openai-translate-action?tab=readme-ov-file#readme) - OpenAI translate action.
 
 ---
 
