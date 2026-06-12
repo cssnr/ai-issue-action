@@ -10,7 +10,7 @@ branding:
 inputs:
   model:
     description: "Model to Use"
-    required: true
+    default: "big-pickle"
   instructions:
     description: "Text Instructions"
   url:

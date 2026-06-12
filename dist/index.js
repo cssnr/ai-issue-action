@@ -1,6 +1,6 @@
 import * as os from 'os';
 import os__default, { EOL } from 'os';
-import * as crypto from 'crypto';
+import * as crypto$1 from 'crypto';
 import * as fs from 'fs';
 import fs__default, { promises, existsSync, readFileSync } from 'fs';
 import * as path$1 from 'path';
@@ -192,7 +192,7 @@ function issueFileCommand(command, message) {
     });
 }
 function prepareKeyValueMessage(key, value) {
-    const delimiter = `ghadelimiter_${crypto.randomUUID()}`;
+    const delimiter = `ghadelimiter_${crypto$1.randomUUID()}`;
     const convertedValue = toCommandValue(value);
     // These should realistically never happen, but just in case someone finds a
     // way to exploit uuid generation let's not allow keys or values that contain
@@ -36618,10 +36618,10 @@ var InvalidResponseDataError = class extends (_b6$1 = AISDKError, _a6$2 = symbol
 
 // src/errors/json-parse-error.ts
 var name6$2 = "AI_JSONParseError";
-var marker7$1 = `vercel.ai.error.${name6$2}`;
-var symbol7$1 = Symbol.for(marker7$1);
-var _a7$1, _b7$1;
-var JSONParseError = class extends (_b7$1 = AISDKError, _a7$1 = symbol7$1, _b7$1) {
+var marker7$2 = `vercel.ai.error.${name6$2}`;
+var symbol7$2 = Symbol.for(marker7$2);
+var _a7$2, _b7$1;
+var JSONParseError = class extends (_b7$1 = AISDKError, _a7$2 = symbol7$2, _b7$1) {
   constructor({ text, cause }) {
     super({
       name: name6$2,
@@ -36629,38 +36629,38 @@ var JSONParseError = class extends (_b7$1 = AISDKError, _a7$1 = symbol7$1, _b7$1
 Error message: ${getErrorMessage$1(cause)}`,
       cause
     });
-    this[_a7$1] = true;
+    this[_a7$2] = true;
     this.text = text;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker7$1);
+    return AISDKError.hasMarker(error, marker7$2);
   }
 };
 
 // src/errors/load-api-key-error.ts
-var name7$1 = "AI_LoadAPIKeyError";
-var marker8$2 = `vercel.ai.error.${name7$1}`;
-var symbol8$2 = Symbol.for(marker8$2);
-var _a8$2, _b8$1;
-var LoadAPIKeyError = class extends (_b8$1 = AISDKError, _a8$2 = symbol8$2, _b8$1) {
+var name7$2 = "AI_LoadAPIKeyError";
+var marker8$1 = `vercel.ai.error.${name7$2}`;
+var symbol8$1 = Symbol.for(marker8$1);
+var _a8$1, _b8$1;
+var LoadAPIKeyError = class extends (_b8$1 = AISDKError, _a8$1 = symbol8$1, _b8$1) {
   // used in isInstance
   constructor({ message }) {
-    super({ name: name7$1, message });
-    this[_a8$2] = true;
+    super({ name: name7$2, message });
+    this[_a8$1] = true;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker8$2);
+    return AISDKError.hasMarker(error, marker8$1);
   }
 };
 
 // src/errors/no-such-model-error.ts
-var name10 = "AI_NoSuchModelError";
-var marker11 = `vercel.ai.error.${name10}`;
+var name10$1 = "AI_NoSuchModelError";
+var marker11 = `vercel.ai.error.${name10$1}`;
 var symbol11 = Symbol.for(marker11);
 var _a11, _b11;
 var NoSuchModelError = class extends (_b11 = AISDKError, _a11 = symbol11, _b11) {
   constructor({
-    errorName = name10,
+    errorName = name10$1,
     modelId,
     modelType,
     message = `No such ${modelType}: ${modelId}`
@@ -36699,10 +36699,10 @@ var TooManyEmbeddingValuesForCallError = class extends (_b12 = AISDKError, _a12 
 
 // src/errors/type-validation-error.ts
 var name12 = "AI_TypeValidationError";
-var marker13$1 = `vercel.ai.error.${name12}`;
-var symbol13$1 = Symbol.for(marker13$1);
-var _a13$1, _b13;
-var TypeValidationError = class _TypeValidationError extends (_b13 = AISDKError, _a13$1 = symbol13$1, _b13) {
+var marker13 = `vercel.ai.error.${name12}`;
+var symbol13 = Symbol.for(marker13);
+var _a13, _b13;
+var TypeValidationError = class _TypeValidationError extends (_b13 = AISDKError, _a13 = symbol13, _b13) {
   constructor({
     value,
     cause,
@@ -36730,12 +36730,12 @@ var TypeValidationError = class _TypeValidationError extends (_b13 = AISDKError,
 Error message: ${getErrorMessage$1(cause)}`,
       cause
     });
-    this[_a13$1] = true;
+    this[_a13] = true;
     this.value = value;
     this.context = context;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker13$1);
+    return AISDKError.hasMarker(error, marker13);
   }
   /**
    * Wraps an error into a TypeValidationError.
@@ -36762,8 +36762,8 @@ Error message: ${getErrorMessage$1(cause)}`,
 };
 
 // src/errors/unsupported-functionality-error.ts
-var name13$1 = "AI_UnsupportedFunctionalityError";
-var marker14$1 = `vercel.ai.error.${name13$1}`;
+var name13 = "AI_UnsupportedFunctionalityError";
+var marker14$1 = `vercel.ai.error.${name13}`;
 var symbol14$1 = Symbol.for(marker14$1);
 var _a14$1, _b14;
 var UnsupportedFunctionalityError = class extends (_b14 = AISDKError, _a14$1 = symbol14$1, _b14) {
@@ -36771,7 +36771,7 @@ var UnsupportedFunctionalityError = class extends (_b14 = AISDKError, _a14$1 = s
     functionality,
     message = `'${functionality}' functionality not supported.`
   }) {
-    super({ name: name13$1, message });
+    super({ name: name13, message });
     this[_a14$1] = true;
     this.functionality = functionality;
   }
@@ -42772,6 +42772,191 @@ var DownloadError = class extends (_b$1 = AISDKError, _a$2 = symbol$2, _b$1) {
   }
 };
 
+// src/is-browser-runtime.ts
+function isBrowserRuntime(globalThisAny = globalThis) {
+  return globalThisAny.window != null;
+}
+
+// src/validate-download-url.ts
+function validateDownloadUrl(url) {
+  let parsed;
+  try {
+    parsed = new URL(url);
+  } catch (e) {
+    throw new DownloadError({
+      url,
+      message: `Invalid URL: ${url}`
+    });
+  }
+  if (parsed.protocol === "data:") {
+    return;
+  }
+  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
+    throw new DownloadError({
+      url,
+      message: `URL scheme must be http, https, or data, got ${parsed.protocol}`
+    });
+  }
+  const hostname = parsed.hostname.toLowerCase().replace(/\.+$/, "");
+  if (!hostname) {
+    throw new DownloadError({
+      url,
+      message: `URL must have a hostname`
+    });
+  }
+  if (hostname === "localhost" || hostname.endsWith(".local") || hostname.endsWith(".localhost")) {
+    throw new DownloadError({
+      url,
+      message: `URL with hostname ${hostname} is not allowed`
+    });
+  }
+  if (hostname.startsWith("[") && hostname.endsWith("]")) {
+    const ipv6 = hostname.slice(1, -1);
+    if (isPrivateIPv6(ipv6)) {
+      throw new DownloadError({
+        url,
+        message: `URL with IPv6 address ${hostname} is not allowed`
+      });
+    }
+    return;
+  }
+  if (isIPv4(hostname)) {
+    if (isPrivateIPv4(hostname)) {
+      throw new DownloadError({
+        url,
+        message: `URL with IP address ${hostname} is not allowed`
+      });
+    }
+    return;
+  }
+}
+function isIPv4(hostname) {
+  const parts = hostname.split(".");
+  if (parts.length !== 4) return false;
+  return parts.every((part) => {
+    const num = Number(part);
+    return Number.isInteger(num) && num >= 0 && num <= 255 && String(num) === part;
+  });
+}
+function isPrivateIPv4(ip) {
+  const parts = ip.split(".").map(Number);
+  const [a, b, c] = parts;
+  if (a === 0) return true;
+  if (a === 10) return true;
+  if (a === 100 && b >= 64 && b <= 127) return true;
+  if (a === 127) return true;
+  if (a === 169 && b === 254) return true;
+  if (a === 172 && b >= 16 && b <= 31) return true;
+  if (a === 192 && b === 0 && c === 0) return true;
+  if (a === 192 && b === 168) return true;
+  if (a === 198 && (b === 18 || b === 19)) return true;
+  if (a >= 240) return true;
+  return false;
+}
+function parseIPv6(ip) {
+  let address = ip.toLowerCase();
+  const zoneIndex = address.indexOf("%");
+  if (zoneIndex !== -1) {
+    address = address.slice(0, zoneIndex);
+  }
+  const halves = address.split("::");
+  if (halves.length > 2) return null;
+  const toGroups = (segment) => {
+    if (segment === "") return [];
+    const groups = [];
+    const parts = segment.split(":");
+    for (let i = 0; i < parts.length; i++) {
+      const part = parts[i];
+      if (part.includes(".")) {
+        if (i !== parts.length - 1 || !isIPv4(part)) return null;
+        const [a, b, c, d] = part.split(".").map(Number);
+        groups.push(a << 8 | b, c << 8 | d);
+        continue;
+      }
+      if (!/^[0-9a-f]{1,4}$/.test(part)) return null;
+      groups.push(parseInt(part, 16));
+    }
+    return groups;
+  };
+  const head = toGroups(halves[0]);
+  if (head === null) return null;
+  if (halves.length === 2) {
+    const tail = toGroups(halves[1]);
+    if (tail === null) return null;
+    const fill = 8 - head.length - tail.length;
+    if (fill < 0) return null;
+    return [...head, ...new Array(fill).fill(0), ...tail];
+  }
+  return head.length === 8 ? head : null;
+}
+function isPrivateIPv6(ip) {
+  const groups = parseIPv6(ip);
+  if (groups === null) return true;
+  const topZero = (count) => groups.slice(0, count).every((group) => group === 0);
+  if (topZero(7) && (groups[7] === 0 || groups[7] === 1)) return true;
+  if ((groups[0] & 65024) === 64512) return true;
+  if ((groups[0] & 65472) === 65152) return true;
+  if ((groups[0] & 65472) === 65216) return true;
+  if ((groups[0] & 65280) === 65280) return true;
+  const embedsIPv4 = (
+    // ::/96 — IPv4-compatible (deprecated)
+    topZero(6) || // ::ffff:0:0/96 — IPv4-mapped (ffff in group 5)
+    topZero(5) && groups[5] === 65535 || // ::ffff:0:0/96 — IPv4-translated form (ffff in group 4, group 5 zero)
+    topZero(4) && groups[4] === 65535 && groups[5] === 0 || // 64:ff9b::/96 — NAT64 well-known prefix
+    groups[0] === 100 && groups[1] === 65435 && groups[2] === 0 && groups[3] === 0 && groups[4] === 0 && groups[5] === 0 || // 64:ff9b:1::/48 — NAT64 local-use prefix
+    groups[0] === 100 && groups[1] === 65435 && groups[2] === 1
+  );
+  if (embedsIPv4) {
+    const a = groups[6] >> 8 & 255;
+    const b = groups[6] & 255;
+    const c = groups[7] >> 8 & 255;
+    const d = groups[7] & 255;
+    return isPrivateIPv4(`${a}.${b}.${c}.${d}`);
+  }
+  return false;
+}
+
+// src/fetch-with-validated-redirects.ts
+var MAX_DOWNLOAD_REDIRECTS = 10;
+async function fetchWithValidatedRedirects({
+  url,
+  headers,
+  abortSignal,
+  maxRedirects = MAX_DOWNLOAD_REDIRECTS
+}) {
+  const baseInit = { signal: abortSignal };
+  if (headers !== void 0) {
+    baseInit.headers = headers;
+  }
+  let currentUrl = url;
+  for (let redirectCount = 0; redirectCount <= maxRedirects; redirectCount++) {
+    validateDownloadUrl(currentUrl);
+    const response = await fetch(currentUrl, {
+      ...baseInit,
+      redirect: "manual"
+    });
+    if (response.type === "opaqueredirect") {
+      if (!isBrowserRuntime()) {
+        throw new DownloadError({
+          url,
+          message: `Redirect from ${currentUrl} could not be validated and was blocked`
+        });
+      }
+      return await fetch(currentUrl, { ...baseInit, redirect: "follow" });
+    }
+    const location = response.headers.get("location");
+    if (response.status >= 300 && response.status < 400 && location) {
+      currentUrl = new URL(location, currentUrl).toString();
+      continue;
+    }
+    return response;
+  }
+  throw new DownloadError({
+    url,
+    message: `Too many redirects (max ${maxRedirects})`
+  });
+}
+
 // src/read-response-with-size-limit.ts
 var DEFAULT_MAX_DOWNLOAD_SIZE = 2 * 1024 * 1024 * 1024;
 async function readResponseWithSizeLimit({
@@ -42827,116 +43012,14 @@ async function readResponseWithSizeLimit({
   return result;
 }
 
-// src/validate-download-url.ts
-function validateDownloadUrl(url) {
-  let parsed;
-  try {
-    parsed = new URL(url);
-  } catch (e) {
-    throw new DownloadError({
-      url,
-      message: `Invalid URL: ${url}`
-    });
-  }
-  if (parsed.protocol === "data:") {
-    return;
-  }
-  if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
-    throw new DownloadError({
-      url,
-      message: `URL scheme must be http, https, or data, got ${parsed.protocol}`
-    });
-  }
-  const hostname = parsed.hostname;
-  if (!hostname) {
-    throw new DownloadError({
-      url,
-      message: `URL must have a hostname`
-    });
-  }
-  if (hostname === "localhost" || hostname.endsWith(".local") || hostname.endsWith(".localhost")) {
-    throw new DownloadError({
-      url,
-      message: `URL with hostname ${hostname} is not allowed`
-    });
-  }
-  if (hostname.startsWith("[") && hostname.endsWith("]")) {
-    const ipv6 = hostname.slice(1, -1);
-    if (isPrivateIPv6(ipv6)) {
-      throw new DownloadError({
-        url,
-        message: `URL with IPv6 address ${hostname} is not allowed`
-      });
-    }
-    return;
-  }
-  if (isIPv4(hostname)) {
-    if (isPrivateIPv4(hostname)) {
-      throw new DownloadError({
-        url,
-        message: `URL with IP address ${hostname} is not allowed`
-      });
-    }
-    return;
-  }
-}
-function isIPv4(hostname) {
-  const parts = hostname.split(".");
-  if (parts.length !== 4) return false;
-  return parts.every((part) => {
-    const num = Number(part);
-    return Number.isInteger(num) && num >= 0 && num <= 255 && String(num) === part;
-  });
-}
-function isPrivateIPv4(ip) {
-  const parts = ip.split(".").map(Number);
-  const [a, b] = parts;
-  if (a === 0) return true;
-  if (a === 10) return true;
-  if (a === 127) return true;
-  if (a === 169 && b === 254) return true;
-  if (a === 172 && b >= 16 && b <= 31) return true;
-  if (a === 192 && b === 168) return true;
-  return false;
-}
-function isPrivateIPv6(ip) {
-  const normalized = ip.toLowerCase();
-  if (normalized === "::1") return true;
-  if (normalized === "::") return true;
-  if (normalized.startsWith("::ffff:")) {
-    const mappedPart = normalized.slice(7);
-    if (isIPv4(mappedPart)) {
-      return isPrivateIPv4(mappedPart);
-    }
-    const hexParts = mappedPart.split(":");
-    if (hexParts.length === 2) {
-      const high = parseInt(hexParts[0], 16);
-      const low = parseInt(hexParts[1], 16);
-      if (!isNaN(high) && !isNaN(low)) {
-        const a = high >> 8 & 255;
-        const b = high & 255;
-        const c = low >> 8 & 255;
-        const d = low & 255;
-        return isPrivateIPv4(`${a}.${b}.${c}.${d}`);
-      }
-    }
-  }
-  if (normalized.startsWith("fc") || normalized.startsWith("fd")) return true;
-  if (normalized.startsWith("fe80")) return true;
-  return false;
-}
-
 // src/download-blob.ts
 async function downloadBlob(url, options) {
   var _a2, _b2;
-  validateDownloadUrl(url);
   try {
-    const response = await fetch(url, {
-      signal: options == null ? void 0 : options.abortSignal
+    const response = await fetchWithValidatedRedirects({
+      url,
+      abortSignal: options == null ? void 0 : options.abortSignal
     });
-    if (response.redirected) {
-      validateDownloadUrl(response.url);
-    }
     if (!response.ok) {
       throw new DownloadError({
         url,
@@ -43112,7 +43195,7 @@ function withUserAgentSuffix(headers, ...userAgentSuffixParts) {
 }
 
 // src/version.ts
-var VERSION$7 = "4.0.27" ;
+var VERSION$7 = "4.0.29" ;
 
 // src/get-from-api.ts
 var getOriginalFetch$1 = () => globalThis.fetch;
@@ -43187,6 +43270,15 @@ var getFromApi = async ({
 // src/is-non-nullable.ts
 function isNonNullable(value) {
   return value != null;
+}
+
+// src/is-same-origin.ts
+function isSameOrigin(url, baseUrl) {
+  try {
+    return new URL(url).origin === new URL(baseUrl).origin;
+  } catch (e) {
+    return false;
+  }
 }
 
 // src/is-url-supported.ts
@@ -45072,7 +45164,7 @@ async function* executeTool({
 // src/anthropic-provider.ts
 
 // src/version.ts
-var VERSION$6 = "3.0.81" ;
+var VERSION$6 = "3.0.84" ;
 var anthropicErrorDataSchema = lazySchema(
   () => zodSchema(
     object$1({
@@ -45087,6 +45179,12 @@ var anthropicErrorDataSchema = lazySchema(
 var anthropicFailedResponseHandler = createJsonErrorResponseHandler({
   errorSchema: anthropicErrorDataSchema,
   errorToMessage: (data) => data.error.message
+});
+var anthropicStopDetailsSchema = object$1({
+  type: string(),
+  category: string().nullish(),
+  explanation: string().nullish(),
+  recommended_model: string().nullish()
 });
 var anthropicMessagesResponseSchema = lazySchema(
   () => zodSchema(
@@ -45373,34 +45471,37 @@ var anthropicMessagesResponseSchema = lazySchema(
                 error_code: string()
               })
             ])
+          }),
+          // Server-side fallback marker. Parsed so the response validates, but
+          // dropped from the content output (the AI SDK has no model-hop
+          // primitive). The hop remains observable via usage.iterations.
+          object$1({
+            type: literal("fallback")
           })
         ])
       ),
       stop_reason: string().nullish(),
       stop_sequence: string().nullish(),
+      stop_details: anthropicStopDetailsSchema.nullish(),
       usage: looseObject({
         input_tokens: number$1(),
         output_tokens: number$1(),
         cache_creation_input_tokens: number$1().nullish(),
         cache_read_input_tokens: number$1().nullish(),
         iterations: array$1(
-          union([
-            object$1({
-              type: union([literal("compaction"), literal("message")]),
-              input_tokens: number$1(),
-              output_tokens: number$1(),
-              cache_creation_input_tokens: number$1().nullish(),
-              cache_read_input_tokens: number$1().nullish()
-            }),
-            object$1({
-              type: literal("advisor_message"),
-              model: string(),
-              input_tokens: number$1(),
-              output_tokens: number$1(),
-              cache_creation_input_tokens: number$1().nullish(),
-              cache_read_input_tokens: number$1().nullish()
-            })
-          ])
+          object$1({
+            type: union([
+              literal("compaction"),
+              literal("message"),
+              literal("advisor_message"),
+              literal("fallback_message")
+            ]),
+            model: string().nullish(),
+            input_tokens: number$1(),
+            output_tokens: number$1(),
+            cache_creation_input_tokens: number$1().nullish(),
+            cache_read_input_tokens: number$1().nullish()
+          })
         ).nullish()
       }),
       container: object$1({
@@ -45735,6 +45836,11 @@ var anthropicMessagesChunkSchema = lazySchema(
                 error_code: string()
               })
             ])
+          }),
+          // Server-side fallback marker; dropped from content output (see the
+          // response schema). The hop remains observable via usage.iterations.
+          object$1({
+            type: literal("fallback")
           })
         ])
       }),
@@ -45808,6 +45914,7 @@ var anthropicMessagesChunkSchema = lazySchema(
         delta: object$1({
           stop_reason: string().nullish(),
           stop_sequence: string().nullish(),
+          stop_details: anthropicStopDetailsSchema.nullish(),
           container: object$1({
             expires_at: string(),
             id: string(),
@@ -45829,26 +45936,19 @@ var anthropicMessagesChunkSchema = lazySchema(
           cache_creation_input_tokens: number$1().nullish(),
           cache_read_input_tokens: number$1().nullish(),
           iterations: array$1(
-            union([
-              object$1({
-                type: union([
-                  literal("compaction"),
-                  literal("message")
-                ]),
-                input_tokens: number$1(),
-                output_tokens: number$1(),
-                cache_creation_input_tokens: number$1().nullish(),
-                cache_read_input_tokens: number$1().nullish()
-              }),
-              object$1({
-                type: literal("advisor_message"),
-                model: string(),
-                input_tokens: number$1(),
-                output_tokens: number$1(),
-                cache_creation_input_tokens: number$1().nullish(),
-                cache_read_input_tokens: number$1().nullish()
-              })
-            ])
+            object$1({
+              type: union([
+                literal("compaction"),
+                literal("message"),
+                literal("advisor_message"),
+                literal("fallback_message")
+              ]),
+              model: string().nullish(),
+              input_tokens: number$1(),
+              output_tokens: number$1(),
+              cache_creation_input_tokens: number$1().nullish(),
+              cache_read_input_tokens: number$1().nullish()
+            })
           ).nullish()
         }),
         context_management: object$1({
@@ -46049,6 +46149,31 @@ var anthropicLanguageModelOptions = object$1({
    * See https://platform.claude.com/docs/en/build-with-claude/data-residency
    */
   inferenceGeo: _enum(["us", "global"]).optional(),
+  /**
+   * Server-side fallback chain.
+   *
+   * When the primary model's safety classifiers block a turn, the API
+   * automatically retries it on the next model in the chain, server-side. A
+   * `content-filter` finish reason means the entire chain refused.
+   *
+   * Each entry is merged into the request as a direct request to that entry's
+   * model, so it must be formatted accordingly: `model` is required, and an
+   * entry may additionally override `max_tokens`, `thinking`, `output_config`,
+   * and `speed` for that attempt only (`speed` additionally requires the speed
+   * beta). The value is passed through to the API as-is.
+   *
+   * The required `server-side-fallback-2026-06-01` beta is added automatically
+   * when this option is set.
+   */
+  fallbacks: array$1(
+    object$1({
+      model: string(),
+      max_tokens: number$1().int().optional(),
+      thinking: record(string(), unknown()).optional(),
+      output_config: record(string(), unknown()).optional(),
+      speed: _enum(["fast", "standard"]).optional()
+    })
+  ).optional(),
   /**
    * A set of beta features to enable.
    * Allow a provider to receive the full `betas` set if it needs it.
@@ -46773,12 +46898,15 @@ function convertAnthropicMessagesUsage({
   usage,
   rawUsage
 }) {
-  var _a, _b;
+  var _a, _b, _c;
   const cacheCreationTokens = (_a = usage.cache_creation_input_tokens) != null ? _a : 0;
   const cacheReadTokens = (_b = usage.cache_read_input_tokens) != null ? _b : 0;
   let inputTokens;
   let outputTokens;
-  if (usage.iterations && usage.iterations.length > 0) {
+  const servedByFallback = (_c = usage.iterations) == null ? void 0 : _c.some(
+    (iter) => iter.type === "fallback_message"
+  );
+  if (usage.iterations && usage.iterations.length > 0 && !servedByFallback) {
     const executorIterations = usage.iterations.filter(
       (iter) => iter.type === "compaction" || iter.type === "message"
     );
@@ -48428,6 +48556,9 @@ var AnthropicMessagesLanguageModel = class {
       ...(anthropicOptions == null ? void 0 : anthropicOptions.inferenceGeo) && {
         inference_geo: anthropicOptions.inferenceGeo
       },
+      ...(anthropicOptions == null ? void 0 : anthropicOptions.fallbacks) && anthropicOptions.fallbacks.length > 0 && {
+        fallbacks: anthropicOptions.fallbacks
+      },
       ...(anthropicOptions == null ? void 0 : anthropicOptions.cacheControl) && {
         cache_control: anthropicOptions.cacheControl
       },
@@ -48603,6 +48734,9 @@ var AnthropicMessagesLanguageModel = class {
     }
     if ((anthropicOptions == null ? void 0 : anthropicOptions.speed) === "fast") {
       betas.add("fast-mode-2026-02-01");
+    }
+    if ((anthropicOptions == null ? void 0 : anthropicOptions.fallbacks) && anthropicOptions.fallbacks.length > 0) {
+      betas.add("server-side-fallback-2026-06-01");
     }
     const defaultEagerInputStreaming = stream && ((_i = anthropicOptions == null ? void 0 : anthropicOptions.toolStreaming) != null ? _i : true);
     const {
@@ -49148,14 +49282,16 @@ var AnthropicMessagesLanguageModel = class {
       warnings,
       providerMetadata: (() => {
         var _a2, _b2, _c2, _d2, _e2;
+        const stopDetails = mapAnthropicStopDetails(response.stop_details);
         const anthropicMetadata = {
           usage: response.usage,
           cacheCreationInputTokens: (_a2 = response.usage.cache_creation_input_tokens) != null ? _a2 : null,
           stopSequence: (_b2 = response.stop_sequence) != null ? _b2 : null,
+          ...stopDetails != null ? { stopDetails } : {},
           iterations: response.usage.iterations ? response.usage.iterations.map(
-            (iter) => iter.type === "advisor_message" ? {
+            (iter) => ({
               type: iter.type,
-              model: iter.model,
+              ...iter.model != null ? { model: iter.model } : {},
               inputTokens: iter.input_tokens,
               outputTokens: iter.output_tokens,
               ...iter.cache_creation_input_tokens ? {
@@ -49164,17 +49300,7 @@ var AnthropicMessagesLanguageModel = class {
               ...iter.cache_read_input_tokens ? {
                 cacheReadInputTokens: iter.cache_read_input_tokens
               } : {}
-            } : {
-              type: iter.type,
-              inputTokens: iter.input_tokens,
-              outputTokens: iter.output_tokens,
-              ...iter.cache_creation_input_tokens ? {
-                cacheCreationInputTokens: iter.cache_creation_input_tokens
-              } : {},
-              ...iter.cache_read_input_tokens ? {
-                cacheReadInputTokens: iter.cache_read_input_tokens
-              } : {}
-            }
+            })
           ) : null,
           container: response.container ? {
             expiresAt: response.container.expires_at,
@@ -49250,6 +49376,7 @@ var AnthropicMessagesLanguageModel = class {
     let rawUsage = void 0;
     let cacheCreationInputTokens = null;
     let stopSequence = null;
+    let stopDetails = void 0;
     let container = null;
     let isJsonResponseFromTool = false;
     let blockType = void 0;
@@ -49276,6 +49403,9 @@ var AnthropicMessagesLanguageModel = class {
             case "content_block_start": {
               const part = value.content_block;
               const contentBlockType = part.type;
+              if (contentBlockType === "fallback") {
+                return;
+              }
               blockType = contentBlockType;
               switch (contentBlockType) {
                 case "text": {
@@ -49949,6 +50079,7 @@ var AnthropicMessagesLanguageModel = class {
                 raw: (_k = value.delta.stop_reason) != null ? _k : void 0
               };
               stopSequence = (_l = value.delta.stop_sequence) != null ? _l : null;
+              stopDetails = mapAnthropicStopDetails(value.delta.stop_details);
               container = value.delta.container != null ? {
                 expiresAt: value.delta.container.expires_at,
                 id: value.delta.container.id,
@@ -49974,10 +50105,11 @@ var AnthropicMessagesLanguageModel = class {
                 usage: rawUsage != null ? rawUsage : null,
                 cacheCreationInputTokens,
                 stopSequence,
+                ...stopDetails != null ? { stopDetails } : {},
                 iterations: usage.iterations ? usage.iterations.map(
-                  (iter) => iter.type === "advisor_message" ? {
+                  (iter) => ({
                     type: iter.type,
-                    model: iter.model,
+                    ...iter.model != null ? { model: iter.model } : {},
                     inputTokens: iter.input_tokens,
                     outputTokens: iter.output_tokens,
                     ...iter.cache_creation_input_tokens ? {
@@ -49986,17 +50118,7 @@ var AnthropicMessagesLanguageModel = class {
                     ...iter.cache_read_input_tokens ? {
                       cacheReadInputTokens: iter.cache_read_input_tokens
                     } : {}
-                  } : {
-                    type: iter.type,
-                    inputTokens: iter.input_tokens,
-                    outputTokens: iter.output_tokens,
-                    ...iter.cache_creation_input_tokens ? {
-                      cacheCreationInputTokens: iter.cache_creation_input_tokens
-                    } : {},
-                    ...iter.cache_read_input_tokens ? {
-                      cacheReadInputTokens: iter.cache_read_input_tokens
-                    } : {}
-                  }
+                  })
                 ) : null,
                 container,
                 contextManagement
@@ -50060,7 +50182,7 @@ var AnthropicMessagesLanguageModel = class {
   }
 };
 function getModelCapabilities(modelId) {
-  if (modelId.includes("claude-opus-4-8") || modelId.includes("claude-opus-4-7")) {
+  if (modelId.includes("claude-opus-4-8") || modelId.includes("claude-opus-4-7") || modelId.includes("claude-fable-5")) {
     return {
       maxOutputTokens: 128e3,
       supportsStructuredOutput: true,
@@ -50160,6 +50282,17 @@ function mapAnthropicResponseContextManagement(contextManagement) {
       }
     }).filter((edit) => edit !== void 0)
   } : null;
+}
+function mapAnthropicStopDetails(stopDetails) {
+  if (stopDetails == null) {
+    return void 0;
+  }
+  return {
+    type: stopDetails.type,
+    ...stopDetails.category != null ? { category: stopDetails.category } : {},
+    ...stopDetails.explanation != null ? { explanation: stopDetails.explanation } : {},
+    ...stopDetails.recommended_model != null ? { recommendedModel: stopDetails.recommended_model } : {}
+  };
 }
 var bash_20241022InputSchema = lazySchema(
   () => zodSchema(
@@ -50719,7 +50852,7 @@ var anthropic = createAnthropic();
 // src/google-provider.ts
 
 // src/version.ts
-var VERSION$5 = "3.0.80" ;
+var VERSION$5 = "3.0.82" ;
 var googleErrorDataSchema = lazySchema(
   () => zodSchema(
     object$1({
@@ -52026,11 +52159,25 @@ function parsePath(rawPath) {
   }
   return segments;
 }
+var hasOwn = Object.prototype.hasOwnProperty;
+function hasOwnProperty(obj, key) {
+  return hasOwn.call(obj, key);
+}
+function defineOwnProperty(obj, key, value) {
+  Object.defineProperty(obj, key, {
+    value,
+    enumerable: true,
+    configurable: true,
+    writable: true
+  });
+}
 function getNestedValue(obj, segments) {
   let current = obj;
   for (const seg of segments) {
     if (current == null || typeof current !== "object") return void 0;
-    current = current[seg];
+    const currentRecord = current;
+    if (!hasOwnProperty(currentRecord, seg)) return void 0;
+    current = currentRecord[seg];
   }
   return current;
 }
@@ -52039,12 +52186,12 @@ function setNestedValue(obj, segments, value) {
   for (let i = 0; i < segments.length - 1; i++) {
     const seg = segments[i];
     const nextSeg = segments[i + 1];
-    if (current[seg] == null) {
-      current[seg] = typeof nextSeg === "number" ? [] : {};
+    if (!hasOwnProperty(current, seg) || current[seg] == null) {
+      defineOwnProperty(current, seg, typeof nextSeg === "number" ? [] : {});
     }
     current = current[seg];
   }
-  current[segments[segments.length - 1]] = value;
+  defineOwnProperty(current, segments[segments.length - 1], value);
 }
 function resolvePartialArgValue(arg) {
   var _a, _b;
@@ -53710,7 +53857,7 @@ var GoogleGenerativeAIVideoModel = class {
     const apiKey = resolvedHeaders == null ? void 0 : resolvedHeaders["x-goog-api-key"];
     for (const generatedSample of response.generateVideoResponse.generatedSamples) {
       if ((_h = generatedSample.video) == null ? void 0 : _h.uri) {
-        const urlWithAuth = apiKey ? `${generatedSample.video.uri}${generatedSample.video.uri.includes("?") ? "&" : "?"}key=${apiKey}` : generatedSample.video.uri;
+        const urlWithAuth = apiKey && isSameOrigin(generatedSample.video.uri, this.config.baseURL) ? `${generatedSample.video.uri}${generatedSample.video.uri.includes("?") ? "&" : "?"}key=${apiKey}` : generatedSample.video.uri;
         videos.push({
           type: "url",
           url: urlWithAuth,
@@ -59267,7 +59414,7 @@ async function convertToOpenAIResponsesInput({
   hasApplyPatchTool = false,
   customProviderToolNames
 }) {
-  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q;
+  var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v;
   let input = [];
   const warnings = [];
   const processedApprovalIds = /* @__PURE__ */ new Set();
@@ -59368,6 +59515,7 @@ async function convertToOpenAIResponsesInput({
             }
             case "tool-call": {
               const id = (_f = (_c = (_b = part.providerOptions) == null ? void 0 : _b[providerOptionsName]) == null ? void 0 : _c.itemId) != null ? _f : (_e = (_d = part.providerMetadata) == null ? void 0 : _d[providerOptionsName]) == null ? void 0 : _e.itemId;
+              const namespace = (_k = (_h = (_g = part.providerOptions) == null ? void 0 : _g[providerOptionsName]) == null ? void 0 : _h.namespace) != null ? _k : (_j = (_i = part.providerMetadata) == null ? void 0 : _i[providerOptionsName]) == null ? void 0 : _j.namespace;
               if (hasConversation && id != null) {
                 break;
               }
@@ -59391,7 +59539,7 @@ async function convertToOpenAIResponsesInput({
                   type: "tool_search_call",
                   id: id != null ? id : part.toolCallId,
                   execution,
-                  call_id: (_g = parsedInput.call_id) != null ? _g : null,
+                  call_id: (_l = parsedInput.call_id) != null ? _l : null,
                   status: "completed",
                   arguments: parsedInput.arguments
                 });
@@ -59477,7 +59625,8 @@ async function convertToOpenAIResponsesInput({
                 call_id: part.toolCallId,
                 name: resolvedToolName,
                 arguments: serializeToolCallArguments2(part.input),
-                id
+                id,
+                ...namespace != null && { namespace }
               });
               break;
             }
@@ -59493,7 +59642,7 @@ async function convertToOpenAIResponsesInput({
                 part.toolName
               );
               if (resolvedResultToolName === "tool_search") {
-                const itemId = (_j = (_i = (_h = part.providerOptions) == null ? void 0 : _h[providerOptionsName]) == null ? void 0 : _i.itemId) != null ? _j : part.toolCallId;
+                const itemId = (_o = (_n = (_m = part.providerOptions) == null ? void 0 : _m[providerOptionsName]) == null ? void 0 : _n.itemId) != null ? _o : part.toolCallId;
                 if (store) {
                   input.push({ type: "item_reference", id: itemId });
                 } else if (part.output.type === "json") {
@@ -59534,7 +59683,7 @@ async function convertToOpenAIResponsesInput({
                 break;
               }
               if (store) {
-                const itemId = (_m = (_l = (_k = part.providerOptions) == null ? void 0 : _k[providerOptionsName]) == null ? void 0 : _l.itemId) != null ? _m : part.toolCallId;
+                const itemId = (_r = (_q = (_p = part.providerOptions) == null ? void 0 : _p[providerOptionsName]) == null ? void 0 : _q.itemId) != null ? _r : part.toolCallId;
                 input.push({ type: "item_reference", id: itemId });
               } else {
                 warnings.push({
@@ -59644,7 +59793,7 @@ async function convertToOpenAIResponsesInput({
           }
           const output = part.output;
           if (output.type === "execution-denied") {
-            const approvalId = (_o = (_n = output.providerOptions) == null ? void 0 : _n.openai) == null ? void 0 : _o.approvalId;
+            const approvalId = (_t = (_s = output.providerOptions) == null ? void 0 : _s.openai) == null ? void 0 : _t.approvalId;
             if (approvalId) {
               continue;
             }
@@ -59718,7 +59867,7 @@ async function convertToOpenAIResponsesInput({
                 outputValue = output.value;
                 break;
               case "execution-denied":
-                outputValue = (_p = output.reason) != null ? _p : "Tool execution denied.";
+                outputValue = (_u = output.reason) != null ? _u : "Tool execution denied.";
                 break;
               case "json":
               case "error-json":
@@ -59779,7 +59928,7 @@ async function convertToOpenAIResponsesInput({
               contentValue = output.value;
               break;
             case "execution-denied":
-              contentValue = (_q = output.reason) != null ? _q : "Tool execution denied.";
+              contentValue = (_v = output.reason) != null ? _v : "Tool execution denied.";
               break;
             case "json":
             case "error-json":
@@ -60916,20 +61065,37 @@ async function prepareResponsesTools({
     return { tools: void 0, toolChoice: void 0, toolWarnings };
   }
   const openaiTools2 = [];
+  const namespaceTools = /* @__PURE__ */ new Map();
   const resolvedCustomProviderToolNames = customProviderToolNames != null ? customProviderToolNames : /* @__PURE__ */ new Set();
   for (const tool of tools) {
     switch (tool.type) {
       case "function": {
         const openaiOptions = (_a = tool.providerOptions) == null ? void 0 : _a.openai;
-        const deferLoading = openaiOptions == null ? void 0 : openaiOptions.deferLoading;
-        openaiTools2.push({
-          type: "function",
-          name: tool.name,
-          description: tool.description,
-          parameters: tool.inputSchema,
-          ...tool.strict != null ? { strict: tool.strict } : {},
-          ...deferLoading != null ? { defer_loading: deferLoading } : {}
+        const openaiFunctionTool = prepareFunctionTool({
+          tool,
+          options: openaiOptions
         });
+        const namespace = openaiOptions == null ? void 0 : openaiOptions.namespace;
+        if (namespace == null) {
+          openaiTools2.push(openaiFunctionTool);
+        } else {
+          let namespaceTool = namespaceTools.get(namespace.name);
+          if (namespaceTool == null) {
+            namespaceTool = {
+              type: "namespace",
+              name: namespace.name,
+              description: namespace.description,
+              tools: []
+            };
+            namespaceTools.set(namespace.name, namespaceTool);
+            openaiTools2.push(namespaceTool);
+          } else if (namespaceTool.description !== namespace.description) {
+            throw new UnsupportedFunctionalityError({
+              functionality: `conflicting descriptions for OpenAI tool namespace "${namespace.name}"`
+            });
+          }
+          namespaceTool.tools.push(openaiFunctionTool);
+        }
         break;
       }
       case "provider": {
@@ -61141,6 +61307,20 @@ async function prepareResponsesTools({
       });
     }
   }
+}
+function prepareFunctionTool({
+  tool,
+  options
+}) {
+  const deferLoading = options == null ? void 0 : options.deferLoading;
+  return {
+    type: "function",
+    name: tool.name,
+    description: tool.description,
+    parameters: tool.inputSchema,
+    ...tool.strict != null ? { strict: tool.strict } : {},
+    ...deferLoading != null ? { defer_loading: deferLoading } : {}
+  };
 }
 function mapShellEnvironment(environment) {
   if (environment.type === "containerReference") {
@@ -63230,7 +63410,7 @@ var OpenAITranscriptionModel = class {
 };
 
 // src/version.ts
-var VERSION$4 = "3.0.67" ;
+var VERSION$4 = "3.0.71" ;
 
 // src/openai-provider.ts
 function createOpenAI(options = {}) {
@@ -64959,7 +65139,7 @@ async function fileToBlob(file) {
 }
 
 // src/version.ts
-var VERSION$3 = "2.0.48" ;
+var VERSION$3 = "2.0.50" ;
 
 // src/openai-compatible-provider.ts
 function createOpenAICompatible(options) {
@@ -65911,12 +66091,35 @@ var GatewayInternalServerError = class extends (_b6 = GatewayError, _a6$1 = symb
   }
 };
 
+// src/errors/gateway-failed-dependency-error.ts
+var name6$1 = "GatewayFailedDependencyError";
+var marker7$1 = `vercel.ai.gateway.error.${name6$1}`;
+var symbol7$1 = Symbol.for(marker7$1);
+var _a7$1, _b7;
+var GatewayFailedDependencyError = class extends (_b7 = GatewayError, _a7$1 = symbol7$1, _b7) {
+  constructor({
+    message = "Failed dependency",
+    statusCode = 424,
+    cause,
+    generationId
+  } = {}) {
+    super({ message, statusCode, cause, generationId });
+    this[_a7$1] = true;
+    // used in isInstance
+    this.name = name6$1;
+    this.type = "failed_dependency";
+  }
+  static isInstance(error) {
+    return GatewayError.hasMarker(error) && symbol7$1 in error;
+  }
+};
+
 // src/errors/gateway-response-error.ts
-var name6$1 = "GatewayResponseError";
-var marker7 = `vercel.ai.gateway.error.${name6$1}`;
-var symbol7 = Symbol.for(marker7);
-var _a7, _b7;
-var GatewayResponseError = class extends (_b7 = GatewayError, _a7 = symbol7, _b7) {
+var name7$1 = "GatewayResponseError";
+var marker8 = `vercel.ai.gateway.error.${name7$1}`;
+var symbol8 = Symbol.for(marker8);
+var _a8, _b8;
+var GatewayResponseError = class extends (_b8 = GatewayError, _a8 = symbol8, _b8) {
   constructor({
     message = "Invalid response from Gateway",
     statusCode = 502,
@@ -65926,15 +66129,15 @@ var GatewayResponseError = class extends (_b7 = GatewayError, _a7 = symbol7, _b7
     generationId
   } = {}) {
     super({ message, statusCode, cause, generationId });
-    this[_a7] = true;
+    this[_a8] = true;
     // used in isInstance
-    this.name = name6$1;
+    this.name = name7$1;
     this.type = "response_error";
     this.response = response;
     this.validationError = validationError;
   }
   static isInstance(error) {
-    return GatewayError.hasMarker(error) && symbol7 in error;
+    return GatewayError.hasMarker(error) && symbol8 in error;
   }
 };
 async function createGatewayErrorFromResponse({
@@ -65944,7 +66147,7 @@ async function createGatewayErrorFromResponse({
   cause,
   authMethod
 }) {
-  var _a9;
+  var _a10;
   const parseResult = await safeValidateTypes({
     value: response,
     schema: gatewayErrorResponseSchema
@@ -65963,7 +66166,7 @@ async function createGatewayErrorFromResponse({
   const validatedResponse = parseResult.value;
   const errorType = validatedResponse.error.type;
   const message = validatedResponse.error.message;
-  const generationId = (_a9 = validatedResponse.generationId) != null ? _a9 : void 0;
+  const generationId = (_a10 = validatedResponse.generationId) != null ? _a10 : void 0;
   switch (errorType) {
     case "authentication_error":
       return GatewayAuthenticationError.createContextualError({
@@ -66002,6 +66205,13 @@ async function createGatewayErrorFromResponse({
     }
     case "internal_server_error":
       return new GatewayInternalServerError({
+        message,
+        statusCode,
+        cause,
+        generationId
+      });
+    case "failed_dependency":
+      return new GatewayFailedDependencyError({
         message,
         statusCode,
         cause,
@@ -66046,11 +66256,11 @@ function extractApiCallResponse(error) {
 }
 
 // src/errors/gateway-timeout-error.ts
-var name7 = "GatewayTimeoutError";
-var marker8$1 = `vercel.ai.gateway.error.${name7}`;
-var symbol8$1 = Symbol.for(marker8$1);
-var _a8$1, _b8;
-var GatewayTimeoutError = class _GatewayTimeoutError extends (_b8 = GatewayError, _a8$1 = symbol8$1, _b8) {
+var name8 = "GatewayTimeoutError";
+var marker9$1 = `vercel.ai.gateway.error.${name8}`;
+var symbol9$1 = Symbol.for(marker9$1);
+var _a9$1, _b9;
+var GatewayTimeoutError = class _GatewayTimeoutError extends (_b9 = GatewayError, _a9$1 = symbol9$1, _b9) {
   constructor({
     message = "Request timed out",
     statusCode = 408,
@@ -66058,13 +66268,13 @@ var GatewayTimeoutError = class _GatewayTimeoutError extends (_b8 = GatewayError
     generationId
   } = {}) {
     super({ message, statusCode, cause, generationId });
-    this[_a8$1] = true;
+    this[_a9$1] = true;
     // used in isInstance
-    this.name = name7;
+    this.name = name8;
     this.type = "timeout_error";
   }
   static isInstance(error) {
-    return GatewayError.hasMarker(error) && symbol8$1 in error;
+    return GatewayError.hasMarker(error) && symbol9$1 in error;
   }
   /**
    * Creates a helpful timeout error message with troubleshooting guidance
@@ -66104,7 +66314,7 @@ function isTimeoutError(error) {
   return false;
 }
 async function asGatewayError(error, authMethod) {
-  var _a9;
+  var _a10;
   if (GatewayError.isInstance(error)) {
     return error;
   }
@@ -66123,7 +66333,7 @@ async function asGatewayError(error, authMethod) {
     }
     return await createGatewayErrorFromResponse({
       response: extractApiCallResponse(error),
-      statusCode: (_a9 = error.statusCode) != null ? _a9 : 500,
+      statusCode: (_a10 = error.statusCode) != null ? _a10 : 500,
       defaultMessage: "Gateway request failed",
       cause: error,
       authMethod
@@ -66593,7 +66803,7 @@ var GatewayEmbeddingModel = class {
     abortSignal,
     providerOptions
   }) {
-    var _a9;
+    var _a10;
     const resolvedHeaders = await resolve(this.config.headers());
     try {
       const {
@@ -66624,7 +66834,7 @@ var GatewayEmbeddingModel = class {
       });
       return {
         embeddings: responseBody.embeddings,
-        usage: (_a9 = responseBody.usage) != null ? _a9 : void 0,
+        usage: (_a10 = responseBody.usage) != null ? _a10 : void 0,
         providerMetadata: responseBody.providerMetadata,
         response: { headers: responseHeaders, body: rawValue },
         warnings: []
@@ -66675,7 +66885,7 @@ var GatewayImageModel = class {
     headers,
     abortSignal
   }) {
-    var _a9, _b9, _c, _d;
+    var _a10, _b10, _c, _d;
     const resolvedHeaders = await resolve(this.config.headers());
     try {
       const {
@@ -66715,7 +66925,7 @@ var GatewayImageModel = class {
       return {
         images: responseBody.images,
         // Always base64 strings from server
-        warnings: (_a9 = responseBody.warnings) != null ? _a9 : [],
+        warnings: (_a10 = responseBody.warnings) != null ? _a10 : [],
         providerMetadata: responseBody.providerMetadata,
         response: {
           timestamp: /* @__PURE__ */ new Date(),
@@ -66724,7 +66934,7 @@ var GatewayImageModel = class {
         },
         ...responseBody.usage != null && {
           usage: {
-            inputTokens: (_b9 = responseBody.usage.inputTokens) != null ? _b9 : void 0,
+            inputTokens: (_b10 = responseBody.usage.inputTokens) != null ? _b10 : void 0,
             outputTokens: (_c = responseBody.usage.outputTokens) != null ? _c : void 0,
             totalTokens: (_d = responseBody.usage.totalTokens) != null ? _d : void 0
           }
@@ -66808,7 +67018,7 @@ var GatewayVideoModel = class {
     headers,
     abortSignal
   }) {
-    var _a9;
+    var _a10;
     const resolvedHeaders = await resolve(this.config.headers());
     try {
       const { responseHeaders, value: responseBody } = await postJsonToApi({
@@ -66904,7 +67114,7 @@ var GatewayVideoModel = class {
       });
       return {
         videos: responseBody.videos,
-        warnings: (_a9 = responseBody.warnings) != null ? _a9 : [],
+        warnings: (_a10 = responseBody.warnings) != null ? _a10 : [],
         providerMetadata: responseBody.providerMetadata,
         response: {
           timestamp: /* @__PURE__ */ new Date(),
@@ -67236,22 +67446,22 @@ var gatewayTools = {
   perplexitySearch
 };
 async function getVercelRequestId() {
-  var _a9;
-  return (_a9 = distExports.getContext().headers) == null ? void 0 : _a9["x-vercel-id"];
+  var _a10;
+  return (_a10 = distExports.getContext().headers) == null ? void 0 : _a10["x-vercel-id"];
 }
 
 // src/version.ts
-var VERSION$2 = "3.0.123" ;
+var VERSION$2 = "3.0.129" ;
 
 // src/gateway-provider.ts
 var AI_GATEWAY_PROTOCOL_VERSION = "0.0.1";
 function createGatewayProvider(options = {}) {
-  var _a9, _b9;
+  var _a10, _b10;
   let pendingMetadata = null;
   let metadataCache = null;
-  const cacheRefreshMillis = (_a9 = options.metadataCacheRefreshMillis) != null ? _a9 : 1e3 * 60 * 5;
+  const cacheRefreshMillis = (_a10 = options.metadataCacheRefreshMillis) != null ? _a10 : 1e3 * 60 * 5;
   let lastFetchTime = 0;
-  const baseURL = (_b9 = withoutTrailingSlash(options.baseURL)) != null ? _b9 : "https://ai-gateway.vercel.sh/v3/ai";
+  const baseURL = (_b10 = withoutTrailingSlash(options.baseURL)) != null ? _b10 : "https://ai-gateway.vercel.sh/v3/ai";
   const getHeaders = async () => {
     try {
       const auth = await getGatewayAuthToken(options);
@@ -67311,8 +67521,8 @@ function createGatewayProvider(options = {}) {
     });
   };
   const getAvailableModels = async () => {
-    var _a10, _b10, _c;
-    const now = (_c = (_b10 = (_a10 = options._internal) == null ? void 0 : _a10.currentDate) == null ? void 0 : _b10.call(_a10).getTime()) != null ? _c : Date.now();
+    var _a11, _b11, _c;
+    const now = (_c = (_b11 = (_a11 = options._internal) == null ? void 0 : _a11.currentDate) == null ? void 0 : _b11.call(_a11).getTime()) != null ? _c : Date.now();
     if (!pendingMetadata || now - lastFetchTime > cacheRefreshMillis) {
       lastFetchTime = now;
       pendingMetadata = new GatewayFetchMetadata({
@@ -68815,8 +69025,8 @@ const trace = TraceAPI.getInstance();
 
 var __defProp = Object.defineProperty;
 var __export = (target, all) => {
-  for (var name21 in all)
-    __defProp(target, name21, { get: all[name21], enumerable: true });
+  for (var name22 in all)
+    __defProp(target, name22, { get: all[name22], enumerable: true });
 };
 var name = "AI_InvalidArgumentError";
 var marker = `vercel.ai.error.${name}`;
@@ -68859,10 +69069,33 @@ var InvalidToolApprovalError = class extends AISDKError {
   }
 };
 _a3 = symbol3;
-var name4 = "AI_InvalidToolInputError";
+var name4 = "AI_InvalidToolApprovalSignatureError";
 var marker4 = `vercel.ai.error.${name4}`;
 var symbol4 = Symbol.for(marker4);
 var _a4;
+var InvalidToolApprovalSignatureError = class extends AISDKError {
+  constructor({
+    approvalId,
+    toolCallId,
+    reason
+  }) {
+    super({
+      name: name4,
+      message: `Tool approval signature verification failed for approval "${approvalId}" (tool call "${toolCallId}"): ${reason}`
+    });
+    this[_a4] = true;
+    this.approvalId = approvalId;
+    this.toolCallId = toolCallId;
+  }
+  static isInstance(error) {
+    return AISDKError.hasMarker(error, marker4);
+  }
+};
+_a4 = symbol4;
+var name5 = "AI_InvalidToolInputError";
+var marker5 = `vercel.ai.error.${name5}`;
+var symbol5 = Symbol.for(marker5);
+var _a5;
 var InvalidToolInputError = class extends AISDKError {
   constructor({
     toolInput,
@@ -68870,62 +69103,62 @@ var InvalidToolInputError = class extends AISDKError {
     cause,
     message = `Invalid input for tool ${toolName}: ${getErrorMessage$1(cause)}`
   }) {
-    super({ name: name4, message, cause });
-    this[_a4] = true;
+    super({ name: name5, message, cause });
+    this[_a5] = true;
     this.toolInput = toolInput;
     this.toolName = toolName;
-  }
-  static isInstance(error) {
-    return AISDKError.hasMarker(error, marker4);
-  }
-};
-_a4 = symbol4;
-var name5 = "AI_ToolCallNotFoundForApprovalError";
-var marker5 = `vercel.ai.error.${name5}`;
-var symbol5 = Symbol.for(marker5);
-var _a5;
-var ToolCallNotFoundForApprovalError = class extends AISDKError {
-  constructor({
-    toolCallId,
-    approvalId
-  }) {
-    super({
-      name: name5,
-      message: `Tool call "${toolCallId}" not found for approval request "${approvalId}".`
-    });
-    this[_a5] = true;
-    this.toolCallId = toolCallId;
-    this.approvalId = approvalId;
   }
   static isInstance(error) {
     return AISDKError.hasMarker(error, marker5);
   }
 };
 _a5 = symbol5;
-var name6 = "AI_MissingToolResultsError";
+var name6 = "AI_ToolCallNotFoundForApprovalError";
 var marker6 = `vercel.ai.error.${name6}`;
 var symbol6 = Symbol.for(marker6);
 var _a6;
-var MissingToolResultsError = class extends AISDKError {
-  constructor({ toolCallIds }) {
+var ToolCallNotFoundForApprovalError = class extends AISDKError {
+  constructor({
+    toolCallId,
+    approvalId
+  }) {
     super({
       name: name6,
-      message: `Tool result${toolCallIds.length > 1 ? "s are" : " is"} missing for tool call${toolCallIds.length > 1 ? "s" : ""} ${toolCallIds.join(
-        ", "
-      )}.`
+      message: `Tool call "${toolCallId}" not found for approval request "${approvalId}".`
     });
     this[_a6] = true;
-    this.toolCallIds = toolCallIds;
+    this.toolCallId = toolCallId;
+    this.approvalId = approvalId;
   }
   static isInstance(error) {
     return AISDKError.hasMarker(error, marker6);
   }
 };
 _a6 = symbol6;
-var name8 = "AI_NoObjectGeneratedError";
-var marker8 = `vercel.ai.error.${name8}`;
-var symbol8 = Symbol.for(marker8);
-var _a8;
+var name7 = "AI_MissingToolResultsError";
+var marker7 = `vercel.ai.error.${name7}`;
+var symbol7 = Symbol.for(marker7);
+var _a7;
+var MissingToolResultsError = class extends AISDKError {
+  constructor({ toolCallIds }) {
+    super({
+      name: name7,
+      message: `Tool result${toolCallIds.length > 1 ? "s are" : " is"} missing for tool call${toolCallIds.length > 1 ? "s" : ""} ${toolCallIds.join(
+        ", "
+      )}.`
+    });
+    this[_a7] = true;
+    this.toolCallIds = toolCallIds;
+  }
+  static isInstance(error) {
+    return AISDKError.hasMarker(error, marker7);
+  }
+};
+_a7 = symbol7;
+var name9 = "AI_NoObjectGeneratedError";
+var marker9 = `vercel.ai.error.${name9}`;
+var symbol9 = Symbol.for(marker9);
+var _a9;
 var NoObjectGeneratedError = class extends AISDKError {
   constructor({
     message = "No object generated.",
@@ -68935,75 +69168,75 @@ var NoObjectGeneratedError = class extends AISDKError {
     usage,
     finishReason
   }) {
-    super({ name: name8, message, cause });
-    this[_a8] = true;
+    super({ name: name9, message, cause });
+    this[_a9] = true;
     this.text = text2;
     this.response = response;
     this.usage = usage;
     this.finishReason = finishReason;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker8);
+    return AISDKError.hasMarker(error, marker9);
   }
 };
-_a8 = symbol8;
-var name9 = "AI_NoOutputGeneratedError";
-var marker9 = `vercel.ai.error.${name9}`;
-var symbol9 = Symbol.for(marker9);
-var _a9;
+_a9 = symbol9;
+var name10 = "AI_NoOutputGeneratedError";
+var marker10 = `vercel.ai.error.${name10}`;
+var symbol10 = Symbol.for(marker10);
+var _a10;
 var NoOutputGeneratedError = class extends AISDKError {
   // used in isInstance
   constructor({
     message = "No output generated.",
     cause
   } = {}) {
-    super({ name: name9, message, cause });
-    this[_a9] = true;
+    super({ name: name10, message, cause });
+    this[_a10] = true;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker9);
+    return AISDKError.hasMarker(error, marker10);
   }
 };
-_a9 = symbol9;
-var name13 = "AI_NoSuchToolError";
-var marker13 = `vercel.ai.error.${name13}`;
-var symbol13 = Symbol.for(marker13);
-var _a13;
+_a10 = symbol10;
+var name14 = "AI_NoSuchToolError";
+var marker14 = `vercel.ai.error.${name14}`;
+var symbol14 = Symbol.for(marker14);
+var _a14;
 var NoSuchToolError = class extends AISDKError {
   constructor({
     toolName,
     availableTools = void 0,
     message = `Model tried to call unavailable tool '${toolName}'. ${availableTools === void 0 ? "No tools are available." : `Available tools: ${availableTools.join(", ")}.`}`
   }) {
-    super({ name: name13, message });
-    this[_a13] = true;
+    super({ name: name14, message });
+    this[_a14] = true;
     this.toolName = toolName;
     this.availableTools = availableTools;
-  }
-  static isInstance(error) {
-    return AISDKError.hasMarker(error, marker13);
-  }
-};
-_a13 = symbol13;
-var name14 = "AI_ToolCallRepairError";
-var marker14 = `vercel.ai.error.${name14}`;
-var symbol14 = Symbol.for(marker14);
-var _a14;
-var ToolCallRepairError = class extends AISDKError {
-  constructor({
-    cause,
-    originalError,
-    message = `Error repairing tool call: ${getErrorMessage$1(cause)}`
-  }) {
-    super({ name: name14, message, cause });
-    this[_a14] = true;
-    this.originalError = originalError;
   }
   static isInstance(error) {
     return AISDKError.hasMarker(error, marker14);
   }
 };
 _a14 = symbol14;
+var name15 = "AI_ToolCallRepairError";
+var marker15 = `vercel.ai.error.${name15}`;
+var symbol15 = Symbol.for(marker15);
+var _a15;
+var ToolCallRepairError = class extends AISDKError {
+  constructor({
+    cause,
+    originalError,
+    message = `Error repairing tool call: ${getErrorMessage$1(cause)}`
+  }) {
+    super({ name: name15, message, cause });
+    this[_a15] = true;
+    this.originalError = originalError;
+  }
+  static isInstance(error) {
+    return AISDKError.hasMarker(error, marker15);
+  }
+};
+_a15 = symbol15;
 var UnsupportedModelVersionError = class extends AISDKError {
   constructor(options) {
     super({
@@ -69015,45 +69248,45 @@ var UnsupportedModelVersionError = class extends AISDKError {
     this.modelId = options.modelId;
   }
 };
-var name17 = "AI_InvalidMessageRoleError";
-var marker17 = `vercel.ai.error.${name17}`;
-var symbol17 = Symbol.for(marker17);
-var _a17;
+var name18 = "AI_InvalidMessageRoleError";
+var marker18 = `vercel.ai.error.${name18}`;
+var symbol18 = Symbol.for(marker18);
+var _a18;
 var InvalidMessageRoleError = class extends AISDKError {
   constructor({
     role,
     message = `Invalid message role: '${role}'. Must be one of: "system", "user", "assistant", "tool".`
   }) {
-    super({ name: name17, message });
-    this[_a17] = true;
+    super({ name: name18, message });
+    this[_a18] = true;
     this.role = role;
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker17);
+    return AISDKError.hasMarker(error, marker18);
   }
 };
-_a17 = symbol17;
-var name19 = "AI_RetryError";
-var marker19 = `vercel.ai.error.${name19}`;
-var symbol19 = Symbol.for(marker19);
-var _a19;
+_a18 = symbol18;
+var name20 = "AI_RetryError";
+var marker20 = `vercel.ai.error.${name20}`;
+var symbol20 = Symbol.for(marker20);
+var _a20;
 var RetryError = class extends AISDKError {
   constructor({
     message,
     reason,
     errors
   }) {
-    super({ name: name19, message });
-    this[_a19] = true;
+    super({ name: name20, message });
+    this[_a20] = true;
     this.reason = reason;
     this.errors = errors;
     this.lastError = errors[errors.length - 1];
   }
   static isInstance(error) {
-    return AISDKError.hasMarker(error, marker19);
+    return AISDKError.hasMarker(error, marker20);
   }
 };
-_a19 = symbol19;
+_a20 = symbol20;
 
 // src/util/as-array.ts
 function asArray(value) {
@@ -69244,8 +69477,8 @@ function resolveLanguageModel(model) {
   return getGlobalProvider().languageModel(model);
 }
 function getGlobalProvider() {
-  var _a21;
-  return (_a21 = globalThis.AI_SDK_DEFAULT_PROVIDER) != null ? _a21 : gateway;
+  var _a22;
+  return (_a22 = globalThis.AI_SDK_DEFAULT_PROVIDER) != null ? _a22 : gateway;
 }
 
 // src/prompt/call-settings.ts
@@ -69377,7 +69610,7 @@ function detectMediaType({
 }
 
 // src/version.ts
-var VERSION = "6.0.195" ;
+var VERSION = "6.0.203" ;
 
 // src/util/download/download.ts
 var download = async ({
@@ -69385,21 +69618,19 @@ var download = async ({
   maxBytes,
   abortSignal
 }) => {
-  var _a21;
+  var _a22;
   const urlText = url.toString();
-  validateDownloadUrl(urlText);
   try {
-    const response = await fetch(urlText, {
-      headers: withUserAgentSuffix(
-        {},
-        `ai-sdk/${VERSION}`,
-        getRuntimeEnvironmentUserAgent()
-      ),
-      signal: abortSignal
+    const headers = withUserAgentSuffix(
+      {},
+      `ai-sdk/${VERSION}`,
+      getRuntimeEnvironmentUserAgent()
+    );
+    const response = await fetchWithValidatedRedirects({
+      url: urlText,
+      headers,
+      abortSignal
     });
-    if (response.redirected) {
-      validateDownloadUrl(response.url);
-    }
     if (!response.ok) {
       throw new DownloadError({
         url: urlText,
@@ -69414,7 +69645,7 @@ var download = async ({
     });
     return {
       data,
-      mediaType: (_a21 = response.headers.get("content-type")) != null ? _a21 : void 0
+      mediaType: (_a22 = response.headers.get("content-type")) != null ? _a22 : void 0
     };
   } catch (error) {
     if (DownloadError.isInstance(error)) {
@@ -69455,8 +69686,8 @@ var dataContentSchema = union([
   custom(
     // Buffer might not be available in some environments such as CloudFlare:
     (value) => {
-      var _a21, _b;
-      return (_b = (_a21 = globalThis.Buffer) == null ? void 0 : _a21.isBuffer(value)) != null ? _b : false;
+      var _a22, _b;
+      return (_b = (_a22 = globalThis.Buffer) == null ? void 0 : _a22.isBuffer(value)) != null ? _b : false;
     },
     { message: "Must be a Buffer" }
   )
@@ -69742,7 +69973,7 @@ function convertToLanguageModelMessage({
   }
 }
 async function downloadAssets(messages, download2, supportedUrls) {
-  var _a21;
+  var _a22;
   const downloadableFiles = [];
   for (const message of messages) {
     if (message.role === "user" && Array.isArray(message.content)) {
@@ -69750,7 +69981,7 @@ async function downloadAssets(messages, download2, supportedUrls) {
         if (part.type === "image" || part.type === "file") {
           downloadableFiles.push({
             data: part.type === "image" ? part.image : part.data,
-            mediaType: (_a21 = part.mediaType) != null ? _a21 : part.type === "image" ? "image/*" : void 0
+            mediaType: (_a22 = part.mediaType) != null ? _a22 : part.type === "image" ? "image/*" : void 0
           });
         }
       }
@@ -69802,7 +70033,7 @@ async function downloadAssets(messages, download2, supportedUrls) {
   );
 }
 function convertPartToLanguageModelPart(part, downloadedAssets) {
-  var _a21;
+  var _a22;
   if (part.type === "text") {
     return {
       type: "text",
@@ -69835,7 +70066,7 @@ function convertPartToLanguageModelPart(part, downloadedAssets) {
   switch (type) {
     case "image": {
       if (data instanceof Uint8Array || typeof data === "string") {
-        mediaType = (_a21 = detectMediaType({ data, signatures: imageMediaTypeSignatures })) != null ? _a21 : mediaType;
+        mediaType = (_a22 = detectMediaType({ data, signatures: imageMediaTypeSignatures })) != null ? _a22 : mediaType;
       }
       return {
         type: "file",
@@ -69870,14 +70101,14 @@ function mapToolResultOutput({
   return {
     type: "content",
     value: output.value.map((item) => {
-      var _a21, _b;
+      var _a22, _b;
       if (item.type === "image-url") {
         const downloadedFile = downloadedAssets[new URL(item.url).toString()];
         if (downloadedFile) {
           return {
             type: "image-data",
             data: convertDataContentToBase64String(downloadedFile.data),
-            mediaType: (_a21 = downloadedFile.mediaType) != null ? _a21 : "image/*",
+            mediaType: (_a22 = downloadedFile.mediaType) != null ? _a22 : "image/*",
             providerOptions: item.providerOptions
           };
         }
@@ -70045,10 +70276,10 @@ async function prepareToolsAndToolChoice({
     };
   }
   const filteredTools = activeTools != null ? Object.entries(tools).filter(
-    ([name21]) => activeTools.includes(name21)
+    ([name22]) => activeTools.includes(name22)
   ) : Object.entries(tools);
   const languageModelTools = [];
-  for (const [name21, tool2] of filteredTools) {
+  for (const [name22, tool2] of filteredTools) {
     const toolType = tool2.type;
     switch (toolType) {
       case void 0:
@@ -70056,7 +70287,7 @@ async function prepareToolsAndToolChoice({
       case "function":
         languageModelTools.push({
           type: "function",
-          name: name21,
+          name: name22,
           description: tool2.description,
           inputSchema: await asSchema(tool2.inputSchema).jsonSchema,
           ...tool2.inputExamples != null ? { inputExamples: tool2.inputExamples } : {},
@@ -70067,7 +70298,7 @@ async function prepareToolsAndToolChoice({
       case "provider":
         languageModelTools.push({
           type: "provider",
-          name: name21,
+          name: name22,
           id: tool2.id,
           args: tool2.args
         });
@@ -70392,7 +70623,7 @@ function getBaseTelemetryAttributes({
   telemetry,
   headers
 }) {
-  var _a21;
+  var _a22;
   return {
     "ai.model.provider": model.provider,
     "ai.model.id": model.modelId,
@@ -70411,7 +70642,7 @@ function getBaseTelemetryAttributes({
       return attributes;
     }, {}),
     // add metadata as attributes:
-    ...Object.entries((_a21 = telemetry == null ? void 0 : telemetry.metadata) != null ? _a21 : {}).reduce(
+    ...Object.entries((_a22 = telemetry == null ? void 0 : telemetry.metadata) != null ? _a22 : {}).reduce(
       (attributes, [key, value]) => {
         attributes[`ai.telemetry.metadata.${key}`] = value;
         return attributes;
@@ -70433,7 +70664,7 @@ var noopTracer = {
   startSpan() {
     return noopSpan;
   },
-  startActiveSpan(name21, arg1, arg2, arg3) {
+  startActiveSpan(name22, arg1, arg2, arg3) {
     if (typeof arg1 === "function") {
       return arg1(noopSpan);
     }
@@ -70500,14 +70731,14 @@ function getTracer({
   return trace.getTracer("ai");
 }
 async function recordSpan({
-  name: name21,
+  name: name22,
   tracer,
   attributes,
   fn,
   endWhenDone = true
 }) {
   return tracer.startActiveSpan(
-    name21,
+    name22,
     { attributes: await attributes },
     async (span) => {
       const ctx = context.active();
@@ -70597,8 +70828,8 @@ function stringifyForTelemetry(prompt) {
   );
 }
 function getGlobalTelemetryIntegrations() {
-  var _a21;
-  return (_a21 = globalThis.AI_SDK_TELEMETRY_INTEGRATIONS) != null ? _a21 : [];
+  var _a22;
+  return (_a22 = globalThis.AI_SDK_TELEMETRY_INTEGRATIONS) != null ? _a22 : [];
 }
 function getGlobalTelemetryIntegration() {
   const globalIntegrations = getGlobalTelemetryIntegrations();
@@ -70659,12 +70890,12 @@ function asLanguageModelUsage(usage) {
   };
 }
 function addLanguageModelUsage(usage1, usage2) {
-  var _a21, _b, _c, _d, _e, _f, _g, _h, _i, _j;
+  var _a22, _b, _c, _d, _e, _f, _g, _h, _i, _j;
   return {
     inputTokens: addTokenCounts(usage1.inputTokens, usage2.inputTokens),
     inputTokenDetails: {
       noCacheTokens: addTokenCounts(
-        (_a21 = usage1.inputTokenDetails) == null ? void 0 : _a21.noCacheTokens,
+        (_a22 = usage1.inputTokenDetails) == null ? void 0 : _a22.noCacheTokens,
         (_b = usage2.inputTokenDetails) == null ? void 0 : _b.noCacheTokens
       ),
       cacheReadTokens: addTokenCounts(
@@ -70940,8 +71171,8 @@ function collectToolApprovals({
 
 // src/util/now.ts
 function now() {
-  var _a21, _b;
-  return (_b = (_a21 = globalThis == null ? void 0 : globalThis.performance) == null ? void 0 : _a21.now()) != null ? _b : Date.now();
+  var _a22, _b;
+  return (_b = (_a22 = globalThis == null ? void 0 : globalThis.performance) == null ? void 0 : _a22.now()) != null ? _b : Date.now();
 }
 
 // src/generate-text/execute-tool-call.ts
@@ -71140,6 +71371,164 @@ async function isApprovalNeeded({
     messages,
     experimental_context
   });
+}
+var encoder = new TextEncoder();
+function canonicalJSON(value) {
+  if (value === null || value === void 0) {
+    return JSON.stringify(value);
+  }
+  if (typeof value !== "object") {
+    return JSON.stringify(value);
+  }
+  if (Array.isArray(value)) {
+    return `[${value.map(canonicalJSON).join(",")}]`;
+  }
+  const keys = Object.keys(value).sort();
+  const entries = keys.map(
+    (k) => `${JSON.stringify(k)}:${canonicalJSON(value[k])}`
+  );
+  return `{${entries.join(",")}}`;
+}
+function toBase64url(bytes) {
+  return convertUint8ArrayToBase64(bytes).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+function fromBase64url(str) {
+  return convertBase64ToUint8Array(str);
+}
+async function importKey(secret) {
+  const keyData = typeof secret === "string" ? encoder.encode(secret) : secret;
+  return crypto.subtle.importKey(
+    "raw",
+    keyData,
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign", "verify"]
+  );
+}
+async function hashInput(input) {
+  const canonical = canonicalJSON(input);
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    encoder.encode(canonical)
+  );
+  return toBase64url(new Uint8Array(digest));
+}
+function buildPayload(approvalId, toolCallId, toolName, inputDigest) {
+  return encoder.encode(
+    `${approvalId}
+${toolCallId}
+${toolName}
+${inputDigest}`
+  );
+}
+async function signToolApproval({
+  secret,
+  approvalId,
+  toolCallId,
+  toolName,
+  input
+}) {
+  const key = await importKey(secret);
+  const inputDigest = await hashInput(input);
+  const payload = buildPayload(approvalId, toolCallId, toolName, inputDigest);
+  const sig = await crypto.subtle.sign("HMAC", key, payload);
+  return toBase64url(new Uint8Array(sig));
+}
+async function verifyToolApprovalSignature({
+  secret,
+  signature,
+  approvalId,
+  toolCallId,
+  toolName,
+  input
+}) {
+  const key = await importKey(secret);
+  const inputDigest = await hashInput(input);
+  const payload = buildPayload(approvalId, toolCallId, toolName, inputDigest);
+  const sigBytes = fromBase64url(signature);
+  return crypto.subtle.verify("HMAC", key, sigBytes, payload);
+}
+async function maybeSignApproval({
+  secret,
+  approvalId,
+  toolCallId,
+  toolName,
+  input
+}) {
+  if (secret == null)
+    return void 0;
+  return signToolApproval({ secret, approvalId, toolCallId, toolName, input });
+}
+async function validateApprovedToolApprovals({
+  approvedToolApprovals,
+  tools,
+  messages,
+  experimental_context,
+  toolApprovalSecret
+}) {
+  var _a22;
+  const approved = [];
+  const denied = [];
+  for (const approval of approvedToolApprovals) {
+    const { toolCall, approvalRequest } = approval;
+    const tool2 = tools == null ? void 0 : tools[toolCall.toolName];
+    if (toolApprovalSecret != null) {
+      if (approvalRequest.signature == null) {
+        throw new InvalidToolApprovalSignatureError({
+          approvalId: approvalRequest.approvalId,
+          toolCallId: toolCall.toolCallId,
+          reason: "missing signature"
+        });
+      }
+      const valid = await verifyToolApprovalSignature({
+        secret: toolApprovalSecret,
+        signature: approvalRequest.signature,
+        approvalId: approvalRequest.approvalId,
+        toolCallId: toolCall.toolCallId,
+        toolName: toolCall.toolName,
+        input: toolCall.input
+      });
+      if (!valid) {
+        throw new InvalidToolApprovalSignatureError({
+          approvalId: approvalRequest.approvalId,
+          toolCallId: toolCall.toolCallId,
+          reason: "invalid signature"
+        });
+      }
+    }
+    if (tool2 != null && typeof tool2.execute === "function" && tool2.inputSchema != null) {
+      const validation = await safeValidateTypes({
+        value: toolCall.input,
+        schema: asSchema(tool2.inputSchema)
+      });
+      if (!validation.success) {
+        throw new InvalidToolInputError({
+          toolName: toolCall.toolName,
+          toolInput: JSON.stringify(toolCall.input),
+          cause: validation.error
+        });
+      }
+    }
+    const approvalNeeded = tool2 != null && await isApprovalNeeded({
+      tool: tool2,
+      toolCall,
+      messages,
+      experimental_context
+    });
+    if (approvalNeeded) {
+      approved.push(approval);
+    } else {
+      denied.push({
+        ...approval,
+        approvalResponse: {
+          ...approval.approvalResponse,
+          approved: false,
+          reason: (_a22 = approval.approvalResponse.reason) != null ? _a22 : `Tool "${toolCall.toolName}" does not require approval`
+        }
+      });
+    }
+  }
+  return { approvedToolApprovals: approved, deniedToolApprovals: denied };
 }
 
 // src/generate-text/output.ts
@@ -71502,7 +71891,7 @@ var text = () => ({
 });
 var object = ({
   schema: inputSchema,
-  name: name21,
+  name: name22,
   description
 }) => {
   const schema = asSchema(inputSchema);
@@ -71511,7 +71900,7 @@ var object = ({
     responseFormat: resolve(schema.jsonSchema).then((jsonSchema2) => ({
       type: "json",
       schema: jsonSchema2,
-      ...name21 != null && { name: name21 },
+      ...name22 != null && { name: name22 },
       ...description != null && { description }
     })),
     async parseCompleteOutput({ text: text2 }, context2) {
@@ -71565,7 +71954,7 @@ var object = ({
 };
 var array = ({
   element: inputElementSchema,
-  name: name21,
+  name: name22,
   description
 }) => {
   const elementSchema = asSchema(inputElementSchema);
@@ -71585,7 +71974,7 @@ var array = ({
           required: ["elements"],
           additionalProperties: false
         },
-        ...name21 != null && { name: name21 },
+        ...name22 != null && { name: name22 },
         ...description != null && { description }
       };
     }),
@@ -71677,7 +72066,7 @@ var array = ({
 };
 var choice = ({
   options: choiceOptions,
-  name: name21,
+  name: name22,
   description
 }) => {
   return {
@@ -71694,7 +72083,7 @@ var choice = ({
         required: ["result"],
         additionalProperties: false
       },
-      ...name21 != null && { name: name21 },
+      ...name22 != null && { name: name22 },
       ...description != null && { description }
     }),
     async parseCompleteOutput({ text: text2 }, context2) {
@@ -71755,14 +72144,14 @@ var choice = ({
   };
 };
 var json = ({
-  name: name21,
+  name: name22,
   description
 } = {}) => {
   return {
     name: "json",
     responseFormat: Promise.resolve({
       type: "json",
-      ...name21 != null && { name: name21 },
+      ...name22 != null && { name: name22 },
       ...description != null && { description }
     }),
     async parseCompleteOutput({ text: text2 }, context2) {
@@ -72098,7 +72487,8 @@ async function toResponseMessages({
         content.push({
           type: "tool-approval-request",
           approvalId: part.approvalId,
-          toolCallId: part.toolCall.toolCallId
+          toolCallId: part.toolCall.toolCallId,
+          ...part.signature != null ? { signature: part.signature } : {}
         });
         break;
     }
@@ -72195,6 +72585,7 @@ async function generateText({
   experimental_repairToolCall: repairToolCall,
   experimental_download: download2,
   experimental_context,
+  experimental_toolApprovalSecret,
   experimental_include: include,
   _internal: { generateId: generateId2 = originalGenerateId } = {},
   experimental_onStart: onStart,
@@ -72296,13 +72687,29 @@ async function generateText({
       }),
       tracer,
       fn: async (span) => {
-        var _a21, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t;
+        var _a22, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t;
         const initialMessages = initialPrompt.messages;
         const responseMessages = [];
-        const { approvedToolApprovals, deniedToolApprovals } = collectToolApprovals({ messages: initialMessages });
-        const localApprovedToolApprovals = approvedToolApprovals.filter(
-          (toolApproval) => !toolApproval.toolCall.providerExecuted
-        );
+        const {
+          approvedToolApprovals,
+          deniedToolApprovals: collectedDeniedToolApprovals
+        } = collectToolApprovals({ messages: initialMessages });
+        const {
+          approvedToolApprovals: localApprovedToolApprovals,
+          deniedToolApprovals: revalidationDeniedToolApprovals
+        } = await validateApprovedToolApprovals({
+          approvedToolApprovals: approvedToolApprovals.filter(
+            (toolApproval) => !toolApproval.toolCall.providerExecuted
+          ),
+          tools,
+          messages: initialMessages,
+          experimental_context,
+          toolApprovalSecret: experimental_toolApprovalSecret
+        });
+        const deniedToolApprovals = [
+          ...collectedDeniedToolApprovals,
+          ...revalidationDeniedToolApprovals
+        ];
         if (deniedToolApprovals.length > 0 || localApprovedToolApprovals.length > 0) {
           const toolOutputs = await executeTools({
             toolCalls: localApprovedToolApprovals.map(
@@ -72383,7 +72790,7 @@ async function generateText({
               experimental_context
             }));
             const stepModel = resolveLanguageModel(
-              (_a21 = prepareStepResult == null ? void 0 : prepareStepResult.model) != null ? _a21 : model
+              (_a22 = prepareStepResult == null ? void 0 : prepareStepResult.model) != null ? _a22 : model
             );
             const stepModelInfo = {
               provider: stepModel.provider,
@@ -72438,7 +72845,7 @@ async function generateText({
             });
             currentModelResponse = await retry(
               () => {
-                var _a22;
+                var _a23;
                 return recordSpan({
                   name: "ai.generateText.doGenerate",
                   attributes: selectTelemetryAttributes({
@@ -72470,14 +72877,14 @@ async function generateText({
                       "gen_ai.request.max_tokens": settings.maxOutputTokens,
                       "gen_ai.request.presence_penalty": settings.presencePenalty,
                       "gen_ai.request.stop_sequences": settings.stopSequences,
-                      "gen_ai.request.temperature": (_a22 = settings.temperature) != null ? _a22 : void 0,
+                      "gen_ai.request.temperature": (_a23 = settings.temperature) != null ? _a23 : void 0,
                       "gen_ai.request.top_k": settings.topK,
                       "gen_ai.request.top_p": settings.topP
                     }
                   }),
                   tracer,
                   fn: async (span2) => {
-                    var _a23, _b2, _c2, _d2, _e2, _f2, _g2, _h2;
+                    var _a24, _b2, _c2, _d2, _e2, _f2, _g2, _h2;
                     const result = await stepModel.doGenerate({
                       ...callSettings2,
                       tools: stepTools,
@@ -72489,7 +72896,7 @@ async function generateText({
                       headers: headersWithUserAgent
                     });
                     const responseData = {
-                      id: (_b2 = (_a23 = result.response) == null ? void 0 : _a23.id) != null ? _b2 : generateId2(),
+                      id: (_b2 = (_a24 = result.response) == null ? void 0 : _a24.id) != null ? _b2 : generateId2(),
                       timestamp: (_d2 = (_c2 = result.response) == null ? void 0 : _c2.timestamp) != null ? _d2 : /* @__PURE__ */ new Date(),
                       modelId: (_f2 = (_e2 = result.response) == null ? void 0 : _e2.modelId) != null ? _f2 : stepModel.modelId,
                       headers: (_g2 = result.response) == null ? void 0 : _g2.headers,
@@ -72582,10 +72989,19 @@ async function generateText({
                 messages: stepInputMessages,
                 experimental_context
               })) {
+                const approvalId = generateId2();
+                const signature = await maybeSignApproval({
+                  secret: experimental_toolApprovalSecret,
+                  approvalId,
+                  toolCallId: toolCall.toolCallId,
+                  toolName: toolCall.toolName,
+                  input: toolCall.input
+                });
                 toolApprovalRequests[toolCall.toolCallId] = {
                   type: "tool-approval-request",
-                  approvalId: generateId2(),
-                  toolCall
+                  approvalId,
+                  toolCall,
+                  ...signature != null ? { signature } : {}
                 };
               }
             }
@@ -73094,6 +73510,7 @@ createIdGenerator({ prefix: "aiobj", size: 24 });
 // src/generate-object/stream-object.ts
 createIdGenerator({ prefix: "aiobj", size: 24 });
 
+// Inputs
 const inputs = {
     model: getInput('model', { required: true }),
     instructions: getInput('instructions'),
@@ -73111,6 +73528,7 @@ async function main() {
         ? `\u001b[35;1m${process.env.GITHUB_ACTION_REF}`
         : '\u001b[33;1mSource';
     info(`🏳️ Starting AI Issue Action - ${version}`);
+    // console.log('inputs:', inputs)
     console.log('github.context.repo:', { ...context$1.repo });
     const octokit = getOctokit(inputs.token);
     let issue;
@@ -73131,7 +73549,7 @@ async function main() {
     }
     startGroup(`Issue #${issue.number}`);
     console.log(issue);
-    endGroup();
+    endGroup(); // issue
     const title = issue.title;
     console.log('Issue Title:', title);
     if (!title)
@@ -73139,13 +73557,13 @@ async function main() {
     const body = issue.body;
     startGroup('Issue Body');
     console.log(body);
-    endGroup();
+    endGroup(); // body
     if (!body)
         return setFailed('No Issue Body');
     const instructions = await getInstructions(inputs);
     startGroup('Instructions');
-    console.log(JSON.stringify(instructions, null, 2));
-    endGroup();
+    console.log(JSON.stringify(instructions, null, 2)); // NOSONAR
+    endGroup(); // instructions
     if (!instructions.length)
         return setFailed('No Instructions Provided');
     console.log('Instructions Length', instructions.length);
@@ -73154,29 +73572,31 @@ async function main() {
     if (!model.modelId)
         return setFailed('No Model Found');
     const maxTokens = Number.parseInt(inputs.maxTokens, 10) || undefined;
-    console.log('Max Tokens:', maxTokens);
+    console.log('Max Tokens:', maxTokens); // NOSONAR
     const response = await generateText({
         prompt: body,
         system: instructions.join('\n\n'),
         model: model,
         maxOutputTokens: maxTokens,
+        // providerOptions: { openai: { serviceTier: 'flex', reasoningEffort: 'none' } },
     });
+    // console.log(inspect(response, { depth: null }))
     startGroup('text');
-    console.log(response.text);
-    endGroup();
+    console.log(response.text); // NOSONAR
+    endGroup(); // text
     startGroup('reasoningText');
     console.log(response.reasoningText);
     endGroup();
     startGroup('usage');
     console.log(JSON.stringify(response.usage, null, 2));
-    endGroup();
+    endGroup(); // usage
     console.log('finishReason:', response.finishReason);
     if (!response.text)
         return setFailed('No Response Text');
     const result = [inputs.head, response.text, inputs.tail].filter(Boolean).join('\n\n');
     startGroup('result');
     console.log(result);
-    endGroup();
+    endGroup(); // result
     const comment = await octokit.rest.issues.createComment({
         ...context$1.repo,
         issue_number: issue.number,
@@ -73184,12 +73604,14 @@ async function main() {
     });
     startGroup('comment');
     console.log(comment);
-    endGroup();
+    endGroup(); // comment
+    // Set Outputs
     info('📩 Setting Outputs');
     setOutput('text', response.text);
     setOutput('reasoningText', response.reasoningText);
     setOutput('usage', response.usage);
     setOutput('finishReason', response.finishReason);
+    // core.setOutput('body', response.response.body)
     setOutput('comment', comment.data);
     setOutput('commentId', comment.data.id);
     setOutput('commentUrl', comment.data.html_url);
@@ -73217,6 +73639,7 @@ function getModel(inputs) {
 }
 async function getInstructions(inputs) {
     const results = [];
+    // const metaText = `You are a helpful assistant responding to a GitHub Issue created by user @${process.env.GITHUB_ACTOR} in repository ${process.env.GITHUB_SERVER_URL}/${process.env.GITHUB_REPOSITORY}`
     if (inputs.instructions)
         results.push(inputs.instructions);
     if (inputs.url) {
@@ -73230,11 +73653,12 @@ async function getInstructions(inputs) {
     if (inputs.path) {
         const globber = await create(inputs.path);
         for await (const file of globber.globGenerator()) {
+            // console.log('file:', file)
             const text = readFileSync$1(file, 'utf8').trim();
             const path = relative(process.env.GITHUB_WORKSPACE || '', file);
             startGroup(file);
             console.log(text);
-            endGroup();
+            endGroup(); // body
             if (text)
                 results.push(`--- Knowledge File: ${path} ---\n\n${text}\n\n`);
         }
