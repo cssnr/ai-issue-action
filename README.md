@@ -1,22 +1,24 @@
-[![GitHub Tag Major](https://img.shields.io/github/v/tag/cssnr/ai-issue-action?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/ai-issue-action/tags)
-[![GitHub Tag Minor](https://img.shields.io/github/v/tag/cssnr/ai-issue-action?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/ai-issue-action/releases)
-[![GitHub Release Version](https://img.shields.io/github/v/release/cssnr/ai-issue-action?logo=git&logoColor=white&labelColor=585858&label=%20)](https://github.com/cssnr/ai-issue-action/releases/latest)
-[![GitHub Dist Size](https://img.shields.io/github/size/cssnr/ai-issue-action/dist%2Findex.js?branch=release&logo=bookstack&logoColor=white&label=dist)](https://github.com/cssnr/ai-issue-action/tree/release)
-[![Action Run Using](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcssnr%2Fai-issue-action%2Frefs%2Fheads%2Fmaster%2Faction.yml&query=%24.runs.using&logo=githubactions&logoColor=white&label=runs)](https://github.com/cssnr/actionlint-action/blob/master/action.yml)
-[![Workflow Release](https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/release.yaml?logo=norton&logoColor=white&label=release)](https://github.com/cssnr/ai-issue-action/actions/workflows/release.yaml)
-[![Workflow Lint](https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/lint.yaml?logo=norton&logoColor=white&label=lint)](https://github.com/cssnr/ai-issue-action/actions/workflows/lint.yaml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cssnr_ai-issue-action&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cssnr_ai-issue-action)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/cssnr/ai-issue-action?logo=github&label=updated)](https://github.com/cssnr/ai-issue-action)
-[![GitHub Repo Size](https://img.shields.io/github/repo-size/cssnr/ai-issue-action?logo=buffer&label=repo%20size)](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
-[![GitHub Top Language](https://img.shields.io/github/languages/top/cssnr/ai-issue-action?logo=devbox)](https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme)
-[![GitHub Contributors](https://img.shields.io/github/contributors-anon/cssnr/ai-issue-action?logo=southwestairlines)](https://github.com/cssnr/ai-issue-action/graphs/contributors)
-[![GitHub Issues](https://img.shields.io/github/issues/cssnr/ai-issue-action?logo=codeforces&logoColor=white)](https://github.com/cssnr/ai-issue-action/issues)
-[![GitHub Discussions](https://img.shields.io/github/discussions/cssnr/ai-issue-action?logo=livechat&logoColor=white)](https://github.com/cssnr/ai-issue-action/discussions)
-[![GitHub Forks](https://img.shields.io/github/forks/cssnr/ai-issue-action?style=flat&logo=forgejo&logoColor=white)](https://github.com/cssnr/ai-issue-action/forks)
-[![GitHub Repo Stars](https://img.shields.io/github/stars/cssnr/ai-issue-action?style=flat&logo=gleam&logoColor=white)](https://github.com/cssnr/ai-issue-action/stargazers)
-[![GitHub Org Stars](https://img.shields.io/github/stars/cssnr?style=flat&logo=apachespark&logoColor=white&label=org%20stars)](https://cssnr.github.io/)
-[![Discord](https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da)](https://discord.gg/wXy6m2X8wY)
-[![Ko-fi](https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=support)](https://ko-fi.com/cssnr)
+<p>
+  <a href="https://github.com/cssnr/ai-issue-action/tags"><img alt="GitHub Tag Major" src="https://img.shields.io/github/v/tag/cssnr/ai-issue-action?sort=semver&filter=!v*.*&logo=git&logoColor=white&labelColor=585858&label=%20"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/releases"><img alt="GitHub Tag Minor" src="https://img.shields.io/github/v/tag/cssnr/ai-issue-action?sort=semver&filter=!v*.*.*&logo=git&logoColor=white&labelColor=585858&label=%20"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/releases/latest"><img alt="GitHub Release Version" src="https://img.shields.io/github/v/release/cssnr/ai-issue-action?logo=git&logoColor=white&labelColor=585858&label=%20"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/tree/release"><img alt="GitHub Dist Size" src="https://img.shields.io/github/size/cssnr/ai-issue-action/dist%2Findex.js?branch=release&logo=bookstack&logoColor=white&label=dist"></a>
+  <a href="https://github.com/cssnr/actionlint-action/blob/master/action.yml"><img alt="Action Run Using" src="https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fcssnr%2Fai-issue-action%2Frefs%2Fheads%2Fmaster%2Faction.yml&query=%24.runs.using&logo=githubactions&logoColor=white&label=runs"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/actions/workflows/release.yaml"><img alt="Workflow Release" src="https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/release.yaml?logo=norton&logoColor=white&label=release"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/actions/workflows/lint.yaml"><img alt="Workflow Lint" src="https://img.shields.io/github/actions/workflow/status/cssnr/ai-issue-action/lint.yaml?logo=norton&logoColor=white&label=lint"></a>
+  <a href="https://sonarcloud.io/summary/new_code?id=cssnr_ai-issue-action"><img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=cssnr_ai-issue-action&metric=alert_status"></a>
+  <a href="https://github.com/cssnr/ai-issue-action"><img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/cssnr/ai-issue-action?logo=github&label=updated"></a>
+  <a href="https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme"><img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/cssnr/ai-issue-action?logo=buffer&label=repo%20size"></a>
+  <a href="https://github.com/cssnr/ai-issue-action?tab=readme-ov-file#readme"><img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/cssnr/ai-issue-action?logo=devbox"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/graphs/contributors"><img alt="GitHub Contributors" src="https://img.shields.io/github/contributors-anon/cssnr/ai-issue-action?logo=southwestairlines"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/issues"><img alt="GitHub Issues" src="https://img.shields.io/github/issues/cssnr/ai-issue-action?logo=codeforces&logoColor=white"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/discussions"><img alt="GitHub Discussions" src="https://img.shields.io/github/discussions/cssnr/ai-issue-action?logo=livechat&logoColor=white"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/forks"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/cssnr/ai-issue-action?style=flat&logo=forgejo&logoColor=white"></a>
+  <a href="https://github.com/cssnr/ai-issue-action/stargazers"><img alt="GitHub Repo Stars" src="https://img.shields.io/github/stars/cssnr/ai-issue-action?style=flat&logo=gleam&logoColor=white"></a>
+  <a href="https://cssnr.github.io/"><img alt="GitHub Org Stars" src="https://img.shields.io/github/stars/cssnr?style=flat&logo=apachespark&logoColor=white&label=org%20stars"></a>
+  <a href="https://discord.gg/wXy6m2X8wY"><img alt="Discord" src="https://img.shields.io/discord/899171661457293343?logo=discord&logoColor=white&label=discord&color=7289da"></a>
+  <a href="https://ko-fi.com/cssnr"><img alt="Ko-fi" src="https://img.shields.io/badge/Ko--fi-72a5f2?logo=kofi&label=support"></a>
+</p>
 
 # AI Issue Action
 
