@@ -25,7 +25,7 @@ npm install
 npm run build:watch
 ```
 
-Then create a `.secrets` file with your GitHub (to post issue comments).
+Then create a `.secrets` file with your GitHub PAT (to post issue comments).
 
 ```text
 GITHUB_TOKEN="ghp_xxx"
