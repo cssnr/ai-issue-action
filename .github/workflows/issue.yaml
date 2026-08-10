@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Create App Token"
         id: app
@@ -41,6 +41,5 @@ jobs:
             Provide initial triage and troubleshooting steps, then gather any additional information needed to proceed.
             Respond using your general knowledge of GitHub Actions and the following knowledge files:
           path: |
-            .github/instructions/issue.md
             action.yml
             README.md
